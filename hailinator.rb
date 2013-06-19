@@ -1,5 +1,6 @@
 require "twitter"
 
+
 	Twitter.configure do |config|
   	config.consumer_key = "uvkCuFf2d63ZmEodWSXc6Q"
   	config.consumer_secret = "qBDxBFnqULp4TjhfdBfX24BmbvfcoPmVkMpC3YMiQ"
@@ -14,4 +15,11 @@ Twitter.search("hail")
 
 Twitter.search("hail").results.each do |status|
 	puts "#{status}"
+end
+
+require "csv"
+CSV.open("hailinator.csv") do |csv|
+	csv << ["row", "of", "CSV", "data"]
+	csv << ["another", "row"]
+
 end
