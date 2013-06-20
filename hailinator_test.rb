@@ -88,7 +88,7 @@ def searching_twitter?
 end
 
 def inspected_tweets?
-  @inspected
+  @inspected || csv_file_exists?
 end
 
 def csv_file_exists?
@@ -203,6 +203,7 @@ TWITTER
 end
 
 
+Twitter.home_timeline rescue nil
 
 unless Twitter.client?
   step 4
